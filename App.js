@@ -6,11 +6,14 @@
  * @flow
  */
 
-import React from 'react';
+import React, {Fragment} from 'react';
 import Router from './app/routes';
-
 const app = () => {
-  return <Router />;
+  return (
+    <Fragment>
+      <Router />
+    </Fragment>
+  );
 };
 
 export default app;

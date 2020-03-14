@@ -22,26 +22,6 @@ const fetchData = async (url, params, customHeaders, cachedControll) => {
     ...customHeaders,
   };
 
-  //   const token = await storage.get(STORAGE_KEY.TOKEN_LOGIN);
-  //   if (token) {
-  //     if (
-  //       url === 'http://35.172.178.112:9000/api/users/v1/login/admin' ||
-  //       url === 'http://35.172.178.112:9000/api/users/v1/resetPassword' ||
-  //       url.substring(0, 48) ===
-  //         'http://35.172.178.112:9000/api/menu/v1?category='
-  //     ) {
-  //       headers = {
-  //         ...headers,
-  //         Authorization,
-  //       };
-  //     } else {
-  //       headers = {
-  //         ...headers,
-  //         Authorization: `Bearer ${token}`,
-  //       };
-  //     }
-  //   }
-
   const response = await fetch(url, {
     ...params,
     headers,

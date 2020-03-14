@@ -5,10 +5,13 @@ import styles from './styles';
 import {IMAGES} from '../../configs';
 import Slide from '../../components/Slide';
 import STYLE from '../../style';
+import storage from '../../utils/storage';
+import STORAGE_KEY from '../../configs/storageKey';
 
 const Onboarding = props => {
-  const onLogin = () => {
+  const onLogin = async () => {
     console.log(props.navigation);
+    await storage.set(STORAGE_KEY.HAS_VISITED_ONBOARDING, true);
     props.navigation.navigate('AuthScreen');
   };
   return (

@@ -1,4 +1,4 @@
-package com.ebook;
+package com.anzalladd.atletiqapp;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "eBook";
+    return "Atletiq";
   }
 }

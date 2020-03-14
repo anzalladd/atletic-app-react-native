@@ -1,4 +1,4 @@
-package com.ebook;
+package com.anzalladd.atletiqapp;
 
 import android.app.Application;
 import android.content.Context;

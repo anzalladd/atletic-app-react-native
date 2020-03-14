@@ -8,6 +8,10 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
   },
+  container: {
+    flex: 1,
+    height: '100%',
+  },
   title: {
     marginTop: 30,
     paddingBottom: 10,
@@ -16,10 +20,11 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    marginLeft: CONSTANS.BASE_MARGIN,
     justifyContent: 'center',
-    padding: 15,
-    marginTop: 30,
+    padding: 25,
+    height: 65,
+    backgroundColor: '#231D5A',
+    borderRadius: 0,
   },
   btnIcon: {
     color: 'white',
@@ -27,6 +32,9 @@ const styles = StyleSheet.create({
   },
   btnText: {
     marginBottom: 5,
+  },
+  wrapperBtn: {
+    backgroundColor: 'white',
   },
 });
 

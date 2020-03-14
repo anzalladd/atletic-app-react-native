@@ -1,11 +1,17 @@
-import React, {useContext, useEffect, useState} from 'react';
-import {View, Text, Image, TouchableOpacity, ToastAndroid} from 'react-native';
+import React, {useContext, useEffect, useState, Fragment} from 'react';
+import {
+  View,
+  Text,
+  Image,
+  KeyboardAvoidingView,
+  ToastAndroid,
+} from 'react-native';
 import {AuthContext} from '../../context/Auth/AuthContext';
 import {IMAGES} from '../../configs';
 import styles from './styles';
 import STYLES from '../../style';
 import FormAuth from '../../components/FormAuth';
-import {Content, Icon, Button, Spinner} from 'native-base';
+import {Content, Icon, Button, Spinner, Container} from 'native-base';
 import SERVICES from '../../configs/services';
 import storage from '../../utils/storage';
 import STORAGE_KEY from '../../configs/storageKey';
@@ -50,18 +56,27 @@ const Auth = props => {
   };
   const authComponent = isLogin ? loginComponent : registerComponent;
   return (
-    <Content>
-      <View style={[STYLES.CONTAINER, styles.container]}>
-        <View style={styles.header}>
-          <Image source={authComponent.image} />
-          <Text style={[STYLES.FONT_HEADER, styles.title]}>
-            {authComponent.title}
-          </Text>
-          <Text style={[STYLES.FONT_CONTENT, styles.description]}>
-            {authComponent.description}
-          </Text>
-        </View>
-        <FormAuth />
+    <Fragment>
+      <Container style={[STYLES.CONTAINER, styles.container]}>
+        <Content>
+          <View>
+            <View style={styles.header}>
+              <Image source={authComponent.image} />
+              <Text style={[STYLES.FONT_HEADER, styles.title]}>
+                {authComponent.title}
+              </Text>
+              <Text style={[STYLES.FONT_CONTENT, styles.description]}>
+                {authComponent.description}
+              </Text>
+            </View>
+            <FormAuth />
+          </View>
+        </Content>
+      </Container>
+      <KeyboardAvoidingView
+        behavior="position"
+        keyboardVerticalOffset={-550}
+        style={styles.wrapperBtn}>
         {!isLoading ? (
           <Button
             style={styles.btnLogin}
@@ -75,8 +90,8 @@ const Auth = props => {
         ) : (
           <Spinner color="#456BFF" />
         )}
-      </View>
-    </Content>
+      </KeyboardAvoidingView>
+    </Fragment>
   );
 };
 
